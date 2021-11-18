@@ -63,9 +63,9 @@ const finish = () => {
     renderMetrics();
 };
 
-const filterByType = (questions, type) => {
+const filterBySubject = (questions, subject) => {
     return questions.filter((quest) => {
-        if (quest.type == type) {
+        if (quest.subject == subject) {
             return quest;
         }
     });
@@ -131,9 +131,9 @@ const fillQuestionsArray = (preSelected, questions) => {
     return preSelected;
 };
 
-const fetchQuestions = (type, challenge) => {
-    const quests = type ? filterByType(QUESTIONS, type) : QUESTIONS;
-    const leveledQuests = challenge ? filterByChallenge(quests, challenge) : quests;
+const fetchQuestions = (subject, challenge) => {
+    const quests = subject ? filterBySubject(QUESTIONS, subject) : QUESTIONS;
+    const leveledQuests = challenge != null ? filterByChallenge(quests, challenge) : quests;
     const { neverDone, alreadyDone } = filterAlreadyDoneQuestions(leveledQuests);
     const firstChoices = orderByPriority(neverDone);
     const seccondChoices = orderByPriority(alreadyDone);
@@ -175,7 +175,7 @@ const clearQuizHolder = () => {
         return;
     }
 
-    for (let i = 0; i < quizHolder.children.length; i++) {
+    for (let i = quizHolder.children.length - 1; i >= 0; i--) {
         quizHolder.removeChild(quizHolder.children[i]);
     }
 };
@@ -209,9 +209,8 @@ const renderQuestions = (questions, i = 0) => {
     startTimeCount(questions[i].id);
 }
 
-const init = () => {
-    const questions = fetchQuestions();
+const init = (subject = null, challange = null) => {
+    subject = subject == "all" ? null : subject;
+    const questions = fetchQuestions(subject, challange);
     renderQuestions(questions);
 };
-
-init();

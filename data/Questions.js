@@ -19,6 +19,8 @@
 },
 */
 
+const SUBJECTS = ["all", "phishing", "social engeneering", "ddos", "https", "hijacking"];
+
 const QUESTIONS = [
     {
         id: 1,
@@ -201,3 +203,20 @@ const QUESTIONS = [
         experience: 20
     },
 ];
+
+const initQuestions = () => {
+    if (!hasTable("QUESTIONS")) {
+        createTable("QUESTIONS");
+        for (const question of QUESTIONS) {
+            insertIntoTable("QUESTIONS", question);
+        }
+    }
+    if (!hasTable("SUBJECTS")) {
+        createTable("SUBJECTS");
+        for (const subject of SUBJECTS) {
+            insertIntoTable("SUBJECTS", subject);
+        }
+    }
+}
+
+initQuestions();

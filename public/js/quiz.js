@@ -1,5 +1,6 @@
 const quizHolder = document.getElementById('quiz');
 const quizSize = 10;
+const ALL_QUESTIONS = JSON.parse(window.localStorage.getItem("QUESTIONS")) ?? [];
 
 let quizAnsweredQuestions = [];
 
@@ -132,7 +133,7 @@ const fillQuestionsArray = (preSelected, questions) => {
 };
 
 const fetchQuestions = (subject, challenge) => {
-    const quests = subject ? filterBySubject(QUESTIONS, subject) : QUESTIONS;
+    const quests = subject ? filterBySubject(ALL_QUESTIONS, subject) : ALL_QUESTIONS;
     const leveledQuests = challenge != null ? filterByChallenge(quests, challenge) : quests;
     const { neverDone, alreadyDone } = filterAlreadyDoneQuestions(leveledQuests);
     const firstChoices = orderByPriority(neverDone);
@@ -209,8 +210,8 @@ const renderQuestions = (questions, i = 0) => {
     startTimeCount(questions[i].id);
 }
 
-const init = (subject = null, challange = null) => {
+const init = (subject = null, challenge = null) => {
     subject = subject == "all" ? null : subject;
-    const questions = fetchQuestions(subject, challange);
+    const questions = fetchQuestions(subject, challenge);
     renderQuestions(questions);
 };

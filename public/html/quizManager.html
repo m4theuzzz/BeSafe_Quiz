@@ -5,27 +5,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/quizManager.css">
     <title>Manage</title>
 </head>
 
 <body>
-
     <div id="app">
         <form id="addQuestion">
-            <input type="text" id="subject">
-            <input type="number" id="challange">
-            <input type="number" id="priority">
-            <input type="text" id="question">
-            <input type="text" id="answer_one">
-            <input type="text" id="answer_two">
-            <input type="text" id="answer_tree">
-            <input type="text" id="answer_four">
-            <input type="number" id="correctAnswer">
-            <input type="text" id="success">
-            <input type="text" id="failure">
-            <input type="number" id="experience">
-            <input type="submit" value="Adicionar">
+            <div class="form-step">
+                <input type="text" id="subject">
+                <span>Assunto:</span>
+            </div>
+            <div class="form-step">
+                <input type="number" id="challenge">
+                <span>Dificuldade:</span>
+            </div>
+            <div class="form-step">
+                <input type="number" id="priority">
+                <span>Prioridade:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="question">
+                <span>Pergunta:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="answer_one">
+                <span>Primeira Alternativa:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="answer_two">
+                <span>Segunda Alternativa:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="answer_tree">
+                <span>Terveira Alternativa:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="answer_four">
+                <span>Quarta Alternativa:</span>
+            </div>
+            <div class="form-step">
+                <input type="number" id="correctAnswer" placeholder="1-4">
+                <span>Número da Alternativa Correta:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="success">
+                <span>Mensagem de Sucesso:</span>
+            </div>
+            <div class="form-step">
+                <input type="text" id="failure">
+                <span>Mensagem de Erro:</span>
+            </div>
+            <div class="form-step">
+                <input type="number" id="experience">
+                <span>Experiência Ganha:</span>
+            </div>
+            <div class="form-step">
+                <input type="submit" value="Adicionar" id="submitButton">
+            </div>
         </form>
+
+        <div id="questHolder"></div>
     </div>
 
     <!-- Classes Simuladas -->

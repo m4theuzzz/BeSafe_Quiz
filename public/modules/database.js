@@ -1,5 +1,5 @@
 const hasTable = (tableName) => {
-    const table = JSON.parse(window.localStorage.getItem(tableName));
+    const table = window.localStorage.getItem(tableName);
 
     if (!table || table == 'undefined') {
         return false;
@@ -21,7 +21,7 @@ const getNextRowId = (tableName) => {
 
     const table = JSON.parse(window.localStorage.getItem(tableName));
 
-    return table.length == 0 ? 1 : table[table.length - 1].id;
+    return table.length == 0 ? 1 : table[table.length - 1].id + 1;
 };
 
 const getTable = (tableName) => {
@@ -68,10 +68,10 @@ const insertIntoTable = (tableName, object) => {
     table.push(object);
 
     try {
-        window.localStorage.setItem(tableName, JSON.stringify(object));
+        window.localStorage.setItem(tableName, JSON.stringify(table));
         return "Objeto inserido na tabela com sucesso";
     } catch (error) {
-
+        throw error;
     }
 };
 
@@ -102,18 +102,17 @@ const deleteFromTable = (tableName, object) => {
         throw "Esta tabela não Existe"
     }
 
-    const table = JSON.parse(window.localStorage.getItem(tableName));
+    let table = JSON.parse(window.localStorage.getItem(tableName));
 
-    const deleteIndex = table.map((item, index) => {
-        if (item.id == object.id) {
-            return index;
+    for (let i = table.length - 1; i >= 0; i--) {
+        console.log(table[i]);
+        if (table[i].id == object.id) {
+            table.splice(i, 1);
         }
-    });
-
-    const newTable = table.splice(deleteIndex, 1);
+    }
 
     try {
-        window.localStorage.setItem(tableName, JSON.stringify(newTable));
+        window.localStorage.setItem(tableName, JSON.stringify(table));
         return `Objeto de id: ${object.id} removido da tabela: ${tableName}, com sucesso.`;
     } catch (error) {
         throw error;

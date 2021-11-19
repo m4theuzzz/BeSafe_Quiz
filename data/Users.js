@@ -21,4 +21,13 @@ const USERS = [
     }
 ];
 
-const initUsers = () => { };
+const initUsers = () => {
+    if (!hasTable("USERS")) {
+        createTable("USERS");
+        USERS.forEach(user => {
+            insertIntoTable("USERS", user);
+        });
+    }
+};
+
+initUsers();

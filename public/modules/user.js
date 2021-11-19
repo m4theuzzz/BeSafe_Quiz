@@ -1,4 +1,4 @@
-const user = USERS[0]; //TODO: Automatizar com sistema de login
+const user = getByid("USERS", 1); //TODO: Automatizar com sistema de login
 
 const getLevelByExperience = () => { };
 
@@ -16,7 +16,7 @@ const getMisses = () => {
 const saveChanges = () => {
     try {
         user.completedQuizzes.misses = getMisses();
-        USERS[0] = user;
+        updateIntoTable("USERS", user);
         return true;
     } catch (error) {
         throw error;

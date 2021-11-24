@@ -1,0 +1,9 @@
+.answer {
+    font-size: 14px;
+    max-width: 36vw;
+}
+
+.answer:hover {
+    color: white;
+    background-color: rgba(68, 68, 68, .5);
+}

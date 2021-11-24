@@ -212,6 +212,7 @@ const renderQuestions = (questions, i = 0) => {
 
     for (let j = 0; j < questions[i].answers.length; j++) {
         const answer = document.createElement('button');
+        answer.className = 'answer';
         answer.innerText = questions[i].answers[j];
         answer.onclick = () => checkResult(questions, i, j);
         answers.appendChild(answer);

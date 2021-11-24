@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+    color: black;
+    padding: 4px 16px;
+    border-radius: 8px;
+    border: 0;
+    background-color: rgba(68, 68, 68, 0.2);
+    transition: .5s;
+}
+
+a:hover {
+    color: white;
+    background-color: rgba(68, 68, 68,.5);
+}
+
+button {
+    color: black;
+    padding: 4px 16px;
+    border-radius: 8px;
+    border: 0;
+    background-color: rgba(68, 68, 68, 0.2);
+    transition: .5s;
+}

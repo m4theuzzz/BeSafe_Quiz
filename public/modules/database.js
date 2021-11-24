@@ -32,7 +32,7 @@ const getTable = (tableName) => {
     return JSON.parse(window.localStorage.getItem(tableName));
 };
 
-const getByid = (tableName, id) => {
+const getById = (tableName, id) => {
     if (!hasTable(tableName)) {
         throw "Esta tabela não Existe"
     }
@@ -105,7 +105,6 @@ const deleteFromTable = (tableName, object) => {
     let table = JSON.parse(window.localStorage.getItem(tableName));
 
     for (let i = table.length - 1; i >= 0; i--) {
-        console.log(table[i]);
         if (table[i].id == object.id) {
             table.splice(i, 1);
         }

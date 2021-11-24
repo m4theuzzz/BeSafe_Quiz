@@ -1,13 +1,14 @@
 const USERS = [
     {
         id: 1,
-        type: "",
-        name: "",
+        accessLevel: 0,
+        profileImage: "",
+        name: "Seu Nome",
         email: "",
         password: "", /*SHA256*/
         birthDate: "",
         completedQuizzes: {
-            questionsAnswered: [],
+            answeredQuestions: [],
             misses: 0
         },
         experience: 0,

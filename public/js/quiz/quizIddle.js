@@ -1,3 +1,4 @@
+
 const quizIddleHolder = document.getElementById('quizIddle');
 
 const startQuiz = (subject) => {
@@ -7,7 +8,9 @@ const startQuiz = (subject) => {
 const orderQuizzes = (filter) => { };
 
 const renderQuizzesBySubject = () => {
-    SUBJECTS.forEach(subject => {
+    const subjects = JSON.parse(window.localStorage.getItem("SUBJECTS"));
+
+    subjects.forEach(subject => {
         let iddleButton = document.createElement('button');
 
         iddleButton.innerHTML = subject;

@@ -13,11 +13,24 @@ const renderMetrics = () => {
     const questHolder = document.createElement('div');
     const lineBreak = document.createElement('br');
 
+    let user = getById("USERS", 1);
+    let answeredQuestionsMetrics = [];
+
+    for (const id of quizAnsweredQuestions) {
+        const answered = user.completedQuizzes.answeredQuestions;
+
+        for (const quest of answered) {
+            if (quest.id == id) {
+                answeredQuestionsMetrics.push(quest);
+            }
+        }
+    }
+
     let hitsTot = quizAnsweredQuestions.length;
     let missesTot = 0;
     let experienceTot = 0;
 
-    quizAnsweredQuestions.forEach((quest, index) => {
+    answeredQuestionsMetrics.forEach((quest, index) => {
         const title = document.createElement('h3');
         const subject = document.createElement('p');
         const challenge = document.createElement('p');
@@ -57,6 +70,8 @@ const renderMetrics = () => {
     quizHolder.appendChild(experienceEarned);
     quizHolder.appendChild(lineBreak);
     quizHolder.appendChild(questHolder);
+
+    quizAnsweredQuestions = [];
 };
 
 const finish = () => {
@@ -81,7 +96,7 @@ const filterByChallenge = (questions, challenge) => {
 };
 
 const fetchIsCompletedInfo = (questions) => {
-    const alreadyAnswered = user.completedQuizzes.questionsAnswered;
+    const alreadyAnswered = user.completedQuizzes.answeredQuestions;
     let answeredQuestionsIds = [];
 
     for (let i = 0; i < alreadyAnswered.length; i++) {
@@ -153,11 +168,11 @@ const checkResult = (questions, index, answer) => {
             subject: questions[index].subject,
             challenge: questions[index].challenge,
             misses: questions[index].misses ?? 0,
+            hits: questions[index].hits ? questions[index].hits + 1 : 1,
             experience: questions[index].experience
         };
-        quizAnsweredQuestions.push(answeredQuestion);
+        quizAnsweredQuestions.push(answeredQuestion.id);
         addAnsweredQuestion(answeredQuestion);
-        saveTimePerQuestion();
         if (window.confirm(questions[index].success) || true) {
             renderQuestions(questions, index + 1);
         }
@@ -215,3 +230,5 @@ const init = (subject = null, challenge = null) => {
     const questions = fetchQuestions(subject, challenge);
     renderQuestions(questions);
 };
+
+init();

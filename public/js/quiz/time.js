@@ -1,5 +1,5 @@
 const getTimePerQuestion = () => {
-    const answeredQuestions = user.completedQuizzes.questionsAnswered;
+    const answeredQuestions = user.completedQuizzes.answeredQuestions;
     let timeObject = answeredQuestions.reduce((acc, cur) => {
         acc[cur.id] = cur.timeElapsed;
         return acc;
@@ -23,7 +23,7 @@ const endTimeCount = (id) => {
 };
 
 const saveTimePerQuestion = () => {
-    return user.completedQuizzes.questionsAnswered.filter((quest) => {
+    return user.completedQuizzes.answeredQuestions.filter((quest) => {
         if (!timePerQuestion[quest.id]) {
             return quest;
         }

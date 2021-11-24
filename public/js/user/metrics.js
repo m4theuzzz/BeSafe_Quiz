@@ -43,7 +43,8 @@ const getTotalMisses = (questions) => {
 const getHitRate = (questions) => {
     const totalMisses = getTotalMisses(questions);
     const totalAnswered = questions.length + totalMisses;
-    return parseFloat((questions.length / totalAnswered) * 100).toFixed(2);
+    const hitRate = parseFloat((questions.length / totalAnswered) * 100).toFixed(2);
+    return hitRate == "NaN" ? 0.00 : hitRate;
 };
 
 const getHitRateBySubject = (questions, subject) => {

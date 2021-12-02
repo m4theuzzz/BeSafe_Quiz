@@ -5,13 +5,12 @@ const ALL_QUESTIONS = JSON.parse(window.localStorage.getItem("QUESTIONS")) ?? []
 let quizAnsweredQuestions = [];
 
 const renderMetrics = () => {
-    const totals = document.createElement('h3');
-    const totalHits = document.createElement('p');
-    const totalMisses = document.createElement('p');
+    const metrics = document.createElement('div');
+    const title = document.createElement('h3');
+    const holder = document.createElement('div');
     const hitRate = document.createElement('p');
     const experienceEarned = document.createElement('p');
-    const questHolder = document.createElement('div');
-    const lineBreak = document.createElement('br');
+    const backLink = document.createElement('a');
 
     let user = getById("USERS", 1);
     let answeredQuestionsMetrics = [];
@@ -31,45 +30,32 @@ const renderMetrics = () => {
     let experienceTot = 0;
 
     answeredQuestionsMetrics.forEach((quest, index) => {
-        const title = document.createElement('h3');
-        const subject = document.createElement('p');
-        const challenge = document.createElement('p');
-        const time = document.createElement('p');
-        const misses = document.createElement('p');
-
-        title.innerText = `Pergunta ${index + 1}`;
-        subject.innerText = `Assunto: ${quest.subject}`;
-        challenge.innerText = `Dificuldade: ${quest.challenge}`;
-        time.innerText = `Tempo Gasto: ${quest.timeElapsed.totalInSec} segundos`;
-        misses.innerText = `Quantidade de Erros: ${quest.misses}`;
-
         missesTot += quest.misses;
         experienceTot += quest.experience;
-
-        questHolder.appendChild(title);
-        questHolder.appendChild(subject);
-        questHolder.appendChild(challenge);
-        questHolder.appendChild(time);
-        questHolder.appendChild(misses);
-        questHolder.appendChild(lineBreak);
     });
 
     let answeredTot = hitsTot + missesTot;
     let hitRateValue = hitsTot / answeredTot;
 
-    totals.innerText = "Métricas globais do Quiz";
-    totalHits.innerText = `Acertos: ${hitsTot}`;
-    totalMisses.innerText = `Erros: ${missesTot}`;
-    hitRate.innerText = `Taxa de Acertos: ${hitRateValue * 100}%`;
-    experienceEarned.innerText = `Experiência Obtida: ${experienceTot}`;
+    metrics.className = "metrics";
+    holder.className = "feedback";
+    backLink.className = "finishLink";
 
-    quizHolder.appendChild(totals);
-    quizHolder.appendChild(totalHits);
-    quizHolder.appendChild(totalMisses);
-    quizHolder.appendChild(hitRate);
-    quizHolder.appendChild(experienceEarned);
-    quizHolder.appendChild(lineBreak);
-    quizHolder.appendChild(questHolder);
+    title.innerText = "Você terminou o questionário!";
+    experienceEarned.innerText = `Experiência Obtida: ${experienceTot}`;
+    hitRate.innerText = `Pontuação: ${(hitRateValue * 100).toFixed()}%`;
+    backLink.innerHTML = `<span>Continuar</span>`;
+
+    backLink.href = '../../index.html';
+
+    holder.appendChild(experienceEarned);
+    holder.appendChild(hitRate);
+
+    metrics.appendChild(title);
+    metrics.appendChild(holder);
+    metrics.appendChild(backLink);
+
+    quizHolder.appendChild(metrics);
 
     quizAnsweredQuestions = [];
 };
@@ -199,16 +185,33 @@ const clearQuizHolder = () => {
 const renderQuestions = (questions, i = 0) => {
     clearQuizHolder();
 
-    const quizQuestion = document.createElement('div');
+    const quizzAnswers = document.createElement('div');
     const question = document.createElement('h3');
     const answers = document.createElement('div');
-    const lineBreak = document.createElement('br');
+    const quizzHeader = document.createElement('div');
+    const backLink = document.createElement('a');
+    const questCounter = document.createElement('span');
+
+    const headerSeparator = document.createElement('div');
 
     if (!questions[i]) {
         return finish();
     }
 
-    question.innerText = questions[i].question;
+    quizzHeader.className = "quizzHeader";
+    headerSeparator.className = "separator";
+    answers.className = "answersHolder";
+
+    question.innerHTML = questions[i].question;
+    backLink.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
+    `;
+    backLink.href = '../../index.html';
+    questCounter.innerHTML = `${i + 1}/${questions.length}`;
 
     for (let j = 0; j < questions[i].answers.length; j++) {
         const answer = document.createElement('button');
@@ -216,13 +219,18 @@ const renderQuestions = (questions, i = 0) => {
         answer.innerText = questions[i].answers[j];
         answer.onclick = () => checkResult(questions, i, j);
         answers.appendChild(answer);
-        answers.appendChild(lineBreak);
     }
 
-    quizQuestion.appendChild(question);
-    quizQuestion.appendChild(answers);
+    headerSeparator.appendChild(backLink);
+    headerSeparator.appendChild(questCounter);
 
-    quizHolder.appendChild(quizQuestion);
+    quizzHeader.appendChild(headerSeparator);
+    quizzHeader.appendChild(question);
+
+    quizzAnswers.appendChild(answers);
+
+    quizHolder.appendChild(quizzHeader);
+    quizHolder.appendChild(quizzAnswers);
     startTimeCount(questions[i].id);
 }
 

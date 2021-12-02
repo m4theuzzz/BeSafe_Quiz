@@ -1,9 +1,121 @@
+#app {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}
+
+.metrics {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-image: var(--main-color);
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.metrics h3 {
+    font-size: var(--font-size-title);
+}
+
+.feedback {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 65%;
+    background-image: var(--seccondary-color);
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    color: black;
+}
+
 .answer {
-    font-size: 14px;
-    max-width: 36vw;
+    font-size: var(--font-size-text);
+    margin-bottom: 2%;
+    width: 50%;
 }
 
 .answer:hover {
     color: white;
-    background-color: rgba(68, 68, 68, .5);
+    background-image: var(--main-color);
+}
+
+.answersHolder {
+    height: 60vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 4%;
+}
+
+.separator {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 !important;
+}
+
+.quizzHeader {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4%;
+    height: 20vh;
+    background-image: var(--main-color);
+    color: white;
+    border-radius: 0 0 4vh 4vh;
+}
+
+.quizzHeader h3 {
+    font-size: var(--font-size-subtitle);
+    max-width: 65%;
+    text-align: center;
+    margin: 0;
+}
+
+.quizzHeader * {
+    margin-bottom: 4%;
+}
+
+.finishLink:hover {
+    color: white;
+    background-image: var(--success-color);
+}
+
+@media screen and (max-width: 799px) {
+    .quizzHeader {
+        height: 25vh;
+    }
+
+    .quizzHeader h3 {
+        margin-top: 4%;
+        max-width: 90%;
+    }
+
+    .separator {
+        width: 90%;
+    }
+
+    .answer {
+        width: 90%;
+        height: 20%;
+        font-size: var(--font-size-text-mobile);
+    }
+
+    .answersHolder {
+        margin: 4% 0 0 0;
+        justify-content: space-around;
+    }
+
+    .feedback {
+        width: 80%;
+    }
 }

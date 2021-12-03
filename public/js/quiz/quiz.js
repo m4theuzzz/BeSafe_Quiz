@@ -1,5 +1,5 @@
 const quizHolder = document.getElementById('quiz');
-const quizSize = 10;
+const quizSize = 6;
 const ALL_QUESTIONS = JSON.parse(window.localStorage.getItem("QUESTIONS")) ?? [];
 
 let quizAnsweredQuestions = [];

@@ -1,5 +1,6 @@
 :root {
     --main-color: linear-gradient(to top right, #116611 0%, #111111 50%, #111166 100%);
+    --radiant-main-color: linear-gradient(to right, #21be21 0%, #111111 50%, #2323c4 100%);
     --seccondary-color: linear-gradient(to top right, #eeeeee 0%, #ffffff 50%, #eeeeee 100%);
     --success-color: linear-gradient(to top right, #00c51a 0%, #005e0c 50%, #00c51a 100%);
     --background-color: rgb(238, 238, 238);
@@ -59,4 +60,9 @@ button {
 
 h3 {
     margin: 0;
+}
+
+.progress-bar {
+    background-color: transparent;
+    background-image: var(--radiant-main-color);
 }

@@ -2,7 +2,7 @@ const USERS = [
     {
         id: 1,
         accessLevel: 0,
-        profileImage: "",
+        profileImage: "../img/user-placeholder.png",
         name: "Seu Nome",
         email: "",
         password: "", /*SHA256*/

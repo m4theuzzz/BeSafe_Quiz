@@ -1,3 +1,69 @@
+#userProfile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.header {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-image: var(--main-color);
+    border-radius: 0 0 4vh 4vh;
+}
+
+.header h3 {
+    font-size: var(--font-size-title);
+}
+
+.header a {
+    align-self: flex-start;
+    margin: 1%;
+}
+
+#profileImage {
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    margin: 15vh 0 24px 0;
+}
+
+.progression {
+    margin-top: 20vh;
+    height: 50vh;
+    width: 75%;
+}
+
+.progression h5 {
+    font-size: var(--font-size-subtitle);
+}
+
 .accordionMetrics span {
     width: 90%;
+}
+
+.float-start {
+    font-size: var(--font-size-text);
+}
+
+@media screen and (max-width: 799px) {
+    #profileImage {
+        margin-top: 10vh;
+    }
+
+    .progression {
+        width: 90%;
+    }
+
+    .header a {
+        margin: 4%
+    }
 }

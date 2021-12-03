@@ -65,7 +65,7 @@
     border-radius: 8px;
     width: 40vw;
     height: 30vh;
-    padding: 1%;
+    padding: 2% 1% 1% 1%;
     margin: 1%;
     display: flex;
     flex-flow: column nowrap;
@@ -135,7 +135,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover, .deleter:hover, .edit:hover {
-    background-color: slategrey;
+    background-image: var(--main-color);
     color: white;
 }
 

@@ -20,7 +20,7 @@
     flex-flow: column nowrap;
     align-content: center;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
     background-image: var(--main-color);
     color: white;
     border-radius: 0 0 4vh 4vh;

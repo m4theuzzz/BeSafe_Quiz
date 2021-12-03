@@ -11,68 +11,69 @@
 </head>
 
 <body>
-    <a href="../../index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-        </svg>
-    </a>
-
     <div id="app">
-        <form id="addQuestion">
-            <div class="form-step">
-                <input type="text" id="subject">
-                <span>Assunto:</span>
-            </div>
-            <div class="form-step">
-                <input type="number" id="challenge">
-                <span>Dificuldade:</span>
-            </div>
-            <div class="form-step">
-                <input type="number" id="priority">
-                <span>Prioridade:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="question">
-                <span>Pergunta:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="answer_one">
-                <span>Primeira Alternativa:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="answer_two">
-                <span>Segunda Alternativa:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="answer_tree">
-                <span>Terceira Alternativa:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="answer_four">
-                <span>Quarta Alternativa:</span>
-            </div>
-            <div class="form-step">
-                <input type="number" id="correctAnswer" placeholder="1-4">
-                <span>Número da Alternativa Correta:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="success">
-                <span>Mensagem de Sucesso:</span>
-            </div>
-            <div class="form-step">
-                <input type="text" id="failure">
-                <span>Mensagem de Erro:</span>
-            </div>
-            <div class="form-step">
-                <input type="number" id="experience">
-                <span>Experiência Ganha:</span>
-            </div>
-            <div class="form-step">
-                <input type="submit" value="Adicionar" id="submitButton">
-            </div>
-        </form>
+        <div class="header">
+            <a href="../../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                </svg>
+            </a>
+            <form id="addQuestion">
+                <div class="form-step">
+                    <input type="text" id="subject">
+                    <span>Assunto:</span>
+                </div>
+                <div class="form-step">
+                    <input type="number" id="challenge">
+                    <span>Dificuldade:</span>
+                </div>
+                <div class="form-step">
+                    <input type="number" id="priority">
+                    <span>Prioridade:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="question">
+                    <span>Pergunta:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="answer_one">
+                    <span>Primeira Alternativa:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="answer_two">
+                    <span>Segunda Alternativa:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="answer_tree">
+                    <span>Terceira Alternativa:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="answer_four">
+                    <span>Quarta Alternativa:</span>
+                </div>
+                <div class="form-step">
+                    <input type="number" id="correctAnswer" placeholder="1-4">
+                    <span>Número da Alternativa Correta:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="success">
+                    <span>Mensagem de Sucesso:</span>
+                </div>
+                <div class="form-step">
+                    <input type="text" id="failure">
+                    <span>Mensagem de Erro:</span>
+                </div>
+                <div class="form-step">
+                    <input type="number" id="experience">
+                    <span>Experiência Ganha:</span>
+                </div>
+                <div class="form-step">
+                    <input type="submit" value="Adicionar" id="submitButton">
+                </div>
+            </form>
+        </div>
 
         <div id="questHolder"></div>
     </div>

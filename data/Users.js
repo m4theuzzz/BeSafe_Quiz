@@ -13,7 +13,6 @@ const USERS = [
         },
         experience: 0,
         configurations: {
-            sound: true,
             theme: "light",
             reminders: true,
             tips: false,

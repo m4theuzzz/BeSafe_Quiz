@@ -1,3 +1,9 @@
+#app {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
 #addQuestion {
     position: relative;
     top: 0;
@@ -9,6 +15,22 @@
     justify-content: center;
 }
 
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    background-image: var(--main-color);
+    color: white;
+    border-radius: 0 0 4vh 4vh;
+}
+
+.header a {
+    align-self: flex-start;
+    margin: 2%;
+}
+
 .form-step {
     display: flex;
     width: 40vw;
@@ -16,6 +38,8 @@
     margin-right: 3vw;
     margin-left: 1vw;
     margin-bottom: 2vh;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .form-step input {
@@ -25,7 +49,7 @@
     transition: .5s;
     border-radius: 4px;
     border: 0;
-    background-color: rgba(66, 66, 66, 0.1);
+    background-image: var(--seccondary-color);
     padding-left: 4%;
 }
 
@@ -46,6 +70,7 @@
     display: flex;
     flex-flow: column nowrap;
     overflow: scroll;
+    background-image: var(--seccondary-color);
 }
 
 .title {
@@ -74,6 +99,7 @@
     margin-bottom: 1%;
     padding: 1%;
     border-radius: 4px;
+    color: white;
 }
 
 .deleter {
@@ -111,4 +137,27 @@ input[type=submit] {
 input[type=submit]:hover, .deleter:hover, .edit:hover {
     background-color: slategrey;
     color: white;
+}
+
+@media screen and (max-width: 799px) {
+    .header a {
+        margin: 4%;
+    }
+
+    #addQuestion {
+        flex-flow: column wrap;
+    }
+
+    .form-step, .form-step input {
+        width: 90vw;
+    }
+
+    #questHolder {
+        flex-flow: column wrap;
+        align-content: center;
+    }
+
+    .card {
+        width: 90vw;
+    }
 }

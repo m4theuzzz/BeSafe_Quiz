@@ -208,10 +208,10 @@ const QUESTIONS = [
         subject: "phishing",
         challenge: 0,
         priority: 2,
-        question: "Qual das alternativas abaixo é não é uma forma de Pesca Cibernética (Phishing)?",
+        question: "Qual das alternativas abaixo não é uma forma de Pesca Cibernética (Phishing)?",
         answers: [
             "Um email que se diz ser de uma grande empresa",
-            "Uma mensagem de testo que se diz ser de um conhecido",
+            "Uma mensagem de texto que se diz ser de um conhecido",
             "Uma notificação dentro do aplicativo oficial da empresa",
             "Uma oferta imperdível em um site suspeito"
         ],

@@ -3,9 +3,9 @@ const USERS = [
         id: 1,
         accessLevel: 1,
         profileImage: "../img/user-placeholder.png",
-        name: "Administrador",
+        name: "admin",
         email: "",
-        password: "admin", /*SHA256*/
+        password: "U2FsdGVkX18XWg72aBdVDHQHhLk5EjjumyD0CF44t9Y=", /*SHA256*/
         completedQuizzes: {
             answeredQuestions: [],
             misses: 0

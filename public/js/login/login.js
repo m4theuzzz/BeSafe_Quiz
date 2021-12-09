@@ -1,6 +1,7 @@
 const login = document.getElementById('login');
 const signin = document.getElementById('signin');
 const alternator = document.getElementById('alternate');
+const passKey = "n07S@f3bu7w0rk5";
 
 let alternate = true;
 let signInValidation = {};
@@ -20,7 +21,7 @@ const doLogIn = (nick, pass) => {
         }
     });
 
-    if (!user || user.length == 0 || user[0].password != pass) {
+    if (!user || user.length == 0 || CryptoJS.AES.decrypt(user[0].password, passKey).toString(CryptoJS.enc.Utf8) != pass) {
         window.alert('Credenciais incorretas');
         return;
     }
@@ -54,12 +55,27 @@ const signUser = () => {
     const newEmail = document.getElementById('newEmail').value;
     const newPass = document.getElementById('newPass').value;
 
+    const users = getTable('USERS');
+
+    const user = users.filter(u => {
+        if (u.name == newNickname) {
+            return u;
+        }
+    });
+
+    if (user.length > 0) {
+        window.alert('Já existe um usuário com este apelido');
+        return;
+    }
+
+    const AESPass = CryptoJS.AES.encrypt(newPass, passKey).toString();
+
     const newUser = {
         accessLevel: 0,
         profileImage: "../img/user-placeholder.png",
         name: newNickname,
         email: newEmail,
-        password: newPass, /*SHA256*/
+        password: AESPass,
         completedQuizzes: {
             answeredQuestions: [],
             misses: 0

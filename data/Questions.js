@@ -19,7 +19,7 @@
 },
 */
 
-const SUBJECTS = ["all", "phishing", "social engeneering", "ddos", "https", "hijacking"];
+const SUBJECTS = ["all", "phishing", "pharming", "social engeneering", "ddos", "https", "hijacking"];
 
 const QUESTIONS = [
     {
@@ -274,24 +274,60 @@ const QUESTIONS = [
         failure: "Opa, essa é uma derivação de Pesca Cibernética (Phishing). Agora que descobriu, lembre-se de ficar sempre atento à ela! Em relação a pergunta, não se preocupe, você sempre terá outra chance.",
         experience: 30
     },
-    // {
-    //     id: 0,
-    //     type: "single",
-    //     subject: "pharming",
-    //     challenge: 0,
-    //     priority: 1,
-    //     question: "Marque a alternativa que melhor define Colheita Cibernética (Pharming):",
-    //     answers: [
-    //         "",
-    //         "É uma forma de invasão simples, que altera o cache do DNS do seu nacegador, fazendo que você seja redirecionado para sites maliciosos, uma vez que tenta entrar no site real de uma empresa. Caso não preste muita atenção, é difícil perceber antes que seja tarde demais",
-    //         "Resposta 3",
-    //         "Resposta 4"
-    //     ],
-    //     correctAnswersIndex: [1],
-    //     success: "Sucesso!",
-    //     failure: "Faiô",
-    //     experience: 15
-    // },
+    {
+        id: 15,
+        type: "single",
+        subject: "pharming",
+        challenge: 0,
+        priority: 1,
+        question: "Marque a alternativa que melhor define Colheita Cibernética (Pharming):",
+        answers: [
+            "É um jogo online, no qual você é responsável por cuidar de uma fazenda",
+            "É uma forma de invasão simples, que altera o cache do DNS do seu nacegador, fazendo que você seja redirecionado para sites maliciosos, uma vez que tenta entrar no site real de uma empresa. Caso não preste muita atenção, é difícil perceber antes que seja tarde demais",
+            "É um crime cibernético que força o computador da vítima a gerar 'Sementes' (seeds) de um produto pirata, no lugar do computador do hacker",
+            "Nenhuma das respostas acima"
+        ],
+        correctAnswersIndex: [1],
+        success: "Sucesso!",
+        failure: "Faiô",
+        experience: 15
+    },
+    {
+        id: 16,
+        type: "single",
+        subject: "pharming",
+        challenge: 3,
+        priority: 1,
+        question: "O que acessar um site malicioso pode prejudicar seu computador?",
+        answers: [
+            "Um site malicioso pode instalar extensões no navegador do usuário sem que ele permita",
+            "Um site malicioso pode instalar um cavalo de tróia no computador do usuário sem que ele saiba",
+            "Um site malicioso pode infectar seu servidor DNS e fazer com que você seja redirecionado para outros sites falsos ao tentar acessar um site original",
+            "Acessar não tem perigo, abrir arquivos que foram baixados sem sua autorização ou que foram baixados destes sites é que infectam sua máquina"
+        ],
+        correctAnswersIndex: [2],
+        success: "É isso aí! Sites maliciosos não são capazes de manipular nada no seu computador, nem instalar nenhum tipo de vírus ou cavalo de tróia, mas eles podem envenenar seu DNS para te redirecionar para sites maliciosos que tentarão roubar suas informações. Este é o crime de Colheita Cibernética (Pharming).",
+        failure: "Infelizmente, você errou. Não se preocupe, esta pergunta era mais difícil, mas pode ficar tranquilo que você terá outras chances, aproveite sempre o aprendizado!",
+        experience: 15
+    },
+    {
+        id: 17,
+        type: "single",
+        subject: "pharming",
+        challenge: 0,
+        priority: 1,
+        question: "Qual das opções abaixo não é uma forma de se defender da Colheita Cibernética (Pharming)?",
+        answers: [
+            "Piratear um antivírus",
+            "Ficar atento aos sites que acessa, pricipalmente aos que pedem informações pessoais ou financeiras",
+            "Verificar a URL do site para identificar se possui protocolo https antes de dar seus dados pessoais",
+            "Conferir se não foi redirecionado ao tentar acessar algum site oficial"
+        ],
+        correctAnswersIndex: [0],
+        success: "É isso, não se deve piratear antivírus, pois quem fez o pirateamento pode ter incluído vírus e excessões a vários malwares dele, te dando uma falsa sensação de proteção, o que é ainda pior do que não ter antivírus.",
+        failure: "Opa, esta é uma forma de se defender de Pharming. Valeu o aprendizado, da próxima vez você acerta!",
+        experience: 15
+    },
 ];
 
 const initQuestions = () => {

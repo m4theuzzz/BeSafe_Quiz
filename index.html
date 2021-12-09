@@ -10,21 +10,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./public/css/global.css">
     <link rel="stylesheet" href="./public/css/index.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <div id="homeScreen">
-        <div class="mainLogo">
-            <img src="./public/img/BeSafe_logo.png" id="appLogo">
-        </div>
-        <div class="navLinks">
-            <a class="homeLink" id="quizzManager" href="./public/html/quizManager.html"><span>Gerenciar</span></a>
-            <a class="homeLink" id="quizz" href="./public/html/quiz.html"><span>Fazer Quizz</span></a>
-            <a class="homeLink" id="profile" href="#"><span>Aprender</span></a>
-            <a class="homeLink" id="profile" href="./public/html/user.html"><span>Seu Perfil</span></a>
+    <div id="loginScreen">
+        <img src="./public/img/BeSafe_logo.png">
+
+        <div class="centered">
+            <div id="login">
+                Usuário:
+                <input type="text" id="nickname">
+
+                Senha:
+                <input type="password" id="password">
+
+                <button
+                    onclick="doLogIn(document.getElementById('nickname').value, document.getElementById('password').value)">Entrar</button>
+            </div>
+
+            <div id="signin">
+                Como quer ser chamado?
+                <input type="text" id="newNickname">
+
+                Em qual email podemos contatá-lo?
+                <input type="email" id="newEmail">
+
+                <span>
+                    Insira uma senha:
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-question-circle-fill" viewBox="0 0 16 16" data-bs-toggle="tooltip"
+                        title="Diferente de todas as suas outras">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg> -->
+                </span>
+                <input type="password" id="newPass">
+
+                Repita a senha anterior:
+                <input type="password" id="repeatPass">
+
+                <button onclick="signUser()">Cadastrar</button>
+            </div>
+
+            <button id="alternate" onclick="alternateLoginView()">Cadastre-se</button>
         </div>
     </div>
+
+    <script src="./public/modules/database.js"></script>
+
+    <script src="./data/Users.js"></script>
+
+    <script src="./public/js/login/login.js"></script>
 </body>
 
 </html>

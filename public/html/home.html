@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="homeScreen">
+        <button id="logoutButton" onclick="logout()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-arrow-bar-left"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z" />
+            </svg>
+        </button>
+
+        <div class="mainLogo">
+            <img src="../img/BeSafe_logo.png" id="appLogo">
+        </div>
+        <div class="navLinks">
+            <a class="homeLink" id="quizz" href="./quiz.html"><span>Fazer Quizz</span></a>
+            <a class="homeLink" id="profile" href="#"><span>Aprender</span></a>
+            <a class="homeLink" id="profile" href="./user.html"><span>Seu Perfil</span></a>
+        </div>
+    </div>
+
+    <script src="../modules/database.js"></script>
+
+    <!-- Bancos de Dados Simulados -->
+    <script src="../../data/Users.js"></script>
+    <script src="../../data/Questions.js"></script>
+
+    <script src="../js/home/home.js"></script>
+
+    <script>
+        const loggedUser = window.localStorage.getItem('loggedUser');
+
+        if (!loggedUser || loggedUser.length == 0) {
+            let a = document.createElement('a');
+            a.href = '../../index.html';
+            a.click();
+        }
+
+        const logout = () => {
+            window.localStorage.removeItem('loggedUser');
+            let a = document.createElement('a');
+            a.href = '../../index.html';
+            a.click();
+        }
+    </script>
+</body>
+
+</html>

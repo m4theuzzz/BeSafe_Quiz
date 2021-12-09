@@ -14,7 +14,7 @@
 <body>
     <div id="userProfile">
         <div class="header">
-            <a href="../../index.html">
+            <a href="./home.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -113,13 +113,19 @@
     <!-- Classes Simuladas -->
     <script src="../modules/database.js"></script>
 
-    <!-- Bancos de Dados Simulados -->
-    <script src="../../data/Users.js"></script>
-    <script src="../../data/Questions.js"></script>
-
     <script src="../js/translations/pt/translate.js"></script>
     <script src="../js/user/metrics.js"></script>
     <script src="../js/user/userProfile.js"></script>
+
+    <script>
+        const loggedUser = window.localStorage.getItem('loggedUser');
+
+        if (!loggedUser || loggedUser.length == 0) {
+            let a = document.createElement('a');
+            a.href = '../../index.html';
+            a.click();
+        }
+    </script>
 </body>
 
 </html>

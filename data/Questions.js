@@ -64,7 +64,7 @@ const QUESTIONS = [
         subject: "phishing",
         challenge: 0,
         priority: 1,
-        question: "Qual das alternativas abaixo não representa uma característica de Phishing?",
+        question: "Qual das alternativas abaixo não representa uma característica de Pesca Cibernética (Phishing)?",
         answers: [
             "O hacker tenta se passar como algum serviço para tentar fisgar a vítima",
             "O hacker usa bots para atacar contínuamente o serviço do usuário",
@@ -72,8 +72,8 @@ const QUESTIONS = [
             "O hacker usa de Engenharia Social para convencer a vítima"
         ],
         correctAnswersIndex: [1],
-        success: "Mandou bem! Ataques de bots são outro tipo de crime cibernético, não se classifica como Phishing.",
-        failure: "Essa não, essa é uma característica de Phishing, mas valeu o aprendizado, na próxima com certeza você acerta!",
+        success: "Mandou bem! Ataques de bots são outro tipo de crime cibernético, não se classifica como Pesca Cibernética (Phishing).",
+        failure: "Essa não, essa é uma característica de Pesca Cibernética (Phishing), mas valeu o aprendizado, na próxima com certeza você acerta!",
         experience: 15
     },
     {
@@ -100,10 +100,10 @@ const QUESTIONS = [
         subject: "pharming",
         challenge: 0,
         priority: 1,
-        question: "Dentre as opções abaixo, marque a que não é uma característica de Pharming:",
+        question: "Dentre as opções abaixo, marque a que não é uma característica de Colheita Cibernética (Pharming):",
         answers: [
             "É uma técnica usada pelos hackers para praticar Engenharia Social.",
-            "É uma variação do Phishing que rouba dados através do trafego em sites maliciosos.",
+            "É uma variação da Pesca Cibernética (Phishing) que rouba dados através do trafego em sites maliciosos.",
             "Normalmente o hacker adultera arquivos base do seu navegador, para que te force a navegar no site malicioso",
             "É facilmente evitado com o uso de antimalwares e antivírus."
         ],
@@ -118,7 +118,7 @@ const QUESTIONS = [
         subject: "phishing",
         challenge: 0,
         priority: 2,
-        question: "Qual das alternativas abaixo descrevem corretamente o Phishing?",
+        question: "Qual das alternativas abaixo descrevem corretamente a Pesca Cibernética (Phishing)?",
         answers: [
             "É uma técnica de Engenharia Social usada para enganar usuários e obter informações confidenciais.",
             "É um crime que ataca as máquinas dos usuários em busca de informações confidenciais.",
@@ -202,6 +202,96 @@ const QUESTIONS = [
         failure: "Essa não, você errou. Fique tranquilo, pois você acabou de descobrir o que não é o Sequestro de Dados, na próxima você acerta.",
         experience: 20
     },
+    {
+        id: 11,
+        type: "single",
+        subject: "phishing",
+        challenge: 0,
+        priority: 2,
+        question: "Qual das alternativas abaixo é não é uma forma de Pesca Cibernética (Phishing)?",
+        answers: [
+            "Um email que se diz ser de uma grande empresa",
+            "Uma mensagem de testo que se diz ser de um conhecido",
+            "Uma notificação dentro do aplicativo oficial da empresa",
+            "Uma oferta imperdível em um site suspeito"
+        ],
+        correctAnswersIndex: [2],
+        success: "É isso aí, uma notificação do app oficial de uma empresa não vai tentar roubar suas informações, pois eles já as têm!",
+        failure: "Opa! Cuidado, mensagens que não foram bem identificadas podem ser perigosas. Além disso, nunca confie em anúncios muito chamativos",
+        experience: 15
+    },
+    {
+        id: 12,
+        type: "single",
+        subject: "phishing",
+        challenge: 2,
+        priority: 0,
+        question: "Marque a alternativa correta:",
+        answers: [
+            "Pesca Cibernética (Phishing) é o tipo mais simples de ciberataque e, ao mesmo tempo, o mais perigoso e eficiente",
+            "A Pesca Cibernética (Phishing) é um dos poucos crimes cibernéticos que envolvem invadir o computador da vítima",
+            "Na Pesca Cibernética (Phishing), o hacker envia somente um email, direcionado somente a uma vítima",
+            "Nenhuma das opções é correta"
+        ],
+        correctAnswersIndex: [0],
+        success: "Isso mesmo! Pesca Cibernética (Phishing) é o tipo mais comum de crime cibernético e tem ficado cada dia convincente, é necessário prestar muita atenção por onde navegamos e onde damos nossas informações",
+        failure: "Essa não, você errou, mas fique tranquilo, é errando que se aprende, na próxima você acerta!",
+        experience: 30
+    },
+    {
+        id: 13,
+        type: "single",
+        subject: "phishing",
+        challenge: 1,
+        priority: 2,
+        question: "Qual das alternativas abaixo não é uma abordagem comum em Pesca Cibernética (Phishing)?",
+        answers: [
+            "O hacker copia um email real e altera os links para direcionar o usuário à um site falso",
+            "O hacker tenta se passar por alguma pessoa importante através de SMS e tenta convencer o usuário a passar informações pessoais",
+            "O hacker conversa pessoalmente com suas vítimas e tenta fazê-las entregar seus dados",
+            "O hacker envia dezenas de emails para centenas de usuários, para aumentar suas chances de enganar alguém"
+        ],
+        correctAnswersIndex: [3],
+        success: "Isso mesmo! Em Pesca Cibernética não há contato pessoal com o hacker, ele tenta usar da sua anonimidade para se passar por outras pessoas",
+        failure: "Opa! Esta é uma abordagem comum de Pesca Cibernética, mas calma, você sempre terá outra chance!",
+        experience: 20
+    },
+    {
+        id: 14,
+        type: "single",
+        subject: "phishing",
+        challenge: 2,
+        priority: 2,
+        question: "Qual das opções abaixo é uma derivação de Pesca Cibernética?",
+        answers: [
+            "Arpão Cibernético (Spear Phishing): Um tipo de Pesca Cibernética em que o hacker se direciona a somente um usuário ou empresa, coletando o máximo de informações da vida ao redor da pessoa, como nomes, números, endereços, etc. e os usa para ganhar a confiança da vítima",
+            "Cópia Cibernética (Clone Phishing): Um tipo de Pesca Cibernética em que o hacker copia um email oficial recebido anteriormente e com alterações nos links e nomes, ele repassa este email clonado para centenas de pessoas, tornando mais difícil reconhecer o golpe",
+            "Estelionato Cibernético (Phone Phishing): Um tipo de Pesca Cibernética em que o hacker entra em contato por SMS ou por ligação, onde ele se passa por outra pessoa, seja um oficial ou um conhecido da vítima, tentando ganhar a confiança dela antes de pedir por suas informações pessoais",
+            "Todas as alternativas anteriores"
+        ],
+        correctAnswersIndex: [3],
+        success: "",
+        failure: "",
+        experience: 30
+    },
+    // {
+    //     id: 0,
+    //     type: "single",
+    //     subject: "pharming",
+    //     challenge: 0,
+    //     priority: 1,
+    //     question: "Marque a alternativa que melhor define Colheita Cibernética (Pharming):",
+    //     answers: [
+    //         "",
+    //         "É uma forma de invasão simples, que altera o cache do DNS do seu nacegador, fazendo que você seja redirecionado para sites maliciosos, uma vez que tenta entrar no site real de uma empresa. Caso não preste muita atenção, é difícil perceber antes que seja tarde demais",
+    //         "Resposta 3",
+    //         "Resposta 4"
+    //     ],
+    //     correctAnswersIndex: [1],
+    //     success: "Sucesso!",
+    //     failure: "Faiô",
+    //     experience: 15
+    // },
 ];
 
 const initQuestions = () => {

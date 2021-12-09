@@ -1,4 +1,4 @@
-const user = JSON.parse(window.localStorage.getItem("USERS"))[0]; //automatizar com sistema de login
+const user = getById('USERS', window.localStorage.getItem('loggedUser')); //automatizar com sistema de login
 
 const clearChildren = (element) => {
     if (element.children.length == 0) {

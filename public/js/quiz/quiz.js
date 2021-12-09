@@ -12,7 +12,7 @@ const renderMetrics = () => {
     const experienceEarned = document.createElement('p');
     const backLink = document.createElement('a');
 
-    let user = getById("USERS", 1);
+    let user = getById("USERS", window.localStorage.getItem('loggedUser'));
     let answeredQuestionsMetrics = [];
 
     for (const id of quizAnsweredQuestions) {
@@ -46,7 +46,7 @@ const renderMetrics = () => {
     hitRate.innerText = `Pontuação: ${(hitRateValue * 100).toFixed()}%`;
     backLink.innerHTML = `<span>Continuar</span>`;
 
-    backLink.href = '../../index.html';
+    backLink.href = './home.html';
 
     holder.appendChild(experienceEarned);
     holder.appendChild(hitRate);
@@ -210,7 +210,7 @@ const renderQuestions = (questions, i = 0) => {
                 d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
         </svg>
     `;
-    backLink.href = '../../index.html';
+    backLink.href = './home.html';
     questCounter.innerHTML = `${i + 1}/${questions.length}`;
 
     for (let j = 0; j < questions[i].answers.length; j++) {

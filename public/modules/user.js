@@ -1,4 +1,4 @@
-let user = getById("USERS", 1); //TODO: Automatizar com sistema de login
+let user = getById("USERS", window.localStorage.getItem('loggedUser')); //TODO: Automatizar com sistema de login
 
 const getLevelByExperience = () => { };
 

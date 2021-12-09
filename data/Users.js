@@ -1,12 +1,11 @@
 const USERS = [
     {
         id: 1,
-        accessLevel: 0,
+        accessLevel: 1,
         profileImage: "../img/user-placeholder.png",
-        name: "Seu Nome",
+        name: "Administrador",
         email: "",
-        password: "", /*SHA256*/
-        birthDate: "",
+        password: "admin", /*SHA256*/
         completedQuizzes: {
             answeredQuestions: [],
             misses: 0

@@ -1,0 +1,61 @@
+#homeScreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+#appLogo {
+    height: 30vh;
+    border-radius: 0 0 4vh 4vh;
+}
+
+#logoutButton {
+    position: absolute;
+    top: 1vh;
+    left: 2vw;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainLogo {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    background-image: var(--main-color);
+    border-radius: 0 0 4vh 4vh;
+}
+
+.navLinks {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.homeLink {
+    width: 36%;
+    height: 12%;
+    text-align: center;
+    font-size: var(--font-size-title);
+}
+
+@media screen and (max-width: 799px) {
+    .homeLink {
+        width: 80%;
+    }
+}

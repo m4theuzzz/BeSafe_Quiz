@@ -271,7 +271,7 @@ const QUESTIONS = [
         ],
         correctAnswersIndex: [3],
         success: "É isso aí! Pesca Cibernética (Phishing) possui várias derivações com abordagens diferentes, é preciso sempre tomar cuidado.",
-        failure: "Opa, essa é uma derivação de Pesca Cibernética (Phishing). Agora que descobriu, lembre-se de ficar sempre atento à ela! Em relação a pergunta, não se preocupe, você sempre terá outra chance.",
+        failure: "Opa, você está certo, mas não era essa a resposta. Agora que descobriu, lembre-se de ficar sempre atento à todas as formas de Pesca Cibernética! Em relação a pergunta, não se preocupe, você sempre terá outra chance.",
         experience: 30
     },
     {

@@ -1,7 +1,6 @@
 const login = document.getElementById('login');
 const signin = document.getElementById('signin');
 const alternator = document.getElementById('alternate');
-const passKey = "n07S@f3bu7w0rk5";
 
 let alternate = true;
 let signInValidation = {};
@@ -14,6 +13,7 @@ const goToHome = () => {
 
 const doLogIn = (nick, pass) => {
     const users = getTable('USERS');
+    let passKey = "n07S@f3bu7w0rk5";
 
     const user = users.filter(u => {
         if (u.name == nick) {
@@ -50,6 +50,7 @@ const signUser = () => {
     if (!checkValidations()) {
         return;
     }
+    let passKey = "n07S@f3bu7w0rk5";
 
     const newNickname = document.getElementById('newNickname').value;
     const newEmail = document.getElementById('newEmail').value;

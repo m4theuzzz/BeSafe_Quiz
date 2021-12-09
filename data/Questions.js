@@ -249,7 +249,7 @@ const QUESTIONS = [
             "O hacker copia um email real e altera os links para direcionar o usuário à um site falso",
             "O hacker tenta se passar por alguma pessoa importante através de SMS e tenta convencer o usuário a passar informações pessoais",
             "O hacker conversa pessoalmente com suas vítimas e tenta fazê-las entregar seus dados",
-            "O hacker envia dezenas de emails para centenas de usuários, para aumentar suas chances de enganar alguém"
+            "O hacker altera o cache do seu navegador para quando acessar um site oficial de um serviço, ele te redirecionar para uma cópia maliciosa daquele site"
         ],
         correctAnswersIndex: [3],
         success: "Isso mesmo! Em Pesca Cibernética não há contato pessoal com o hacker, ele tenta usar da sua anonimidade para se passar por outras pessoas",
@@ -270,8 +270,8 @@ const QUESTIONS = [
             "Todas as alternativas anteriores"
         ],
         correctAnswersIndex: [3],
-        success: "",
-        failure: "",
+        success: "É isso aí! Pesca Cibernética (Phishing) possui várias derivações com abordagens diferentes, é preciso sempre tomar cuidado.",
+        failure: "Opa, essa é uma derivação de Pesca Cibernética (Phishing). Agora que descobriu, lembre-se de ficar sempre atento à ela! Em relação a pergunta, não se preocupe, você sempre terá outra chance.",
         experience: 30
     },
     // {

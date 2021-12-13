@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/learn/learn.css">
+    <title>Aprender</title>
+</head>
+
+<body>
+
+    <div id="chaptersHolder">
+        <button onclick="goToHome()" id="backLink">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+        </button>
+
+        <button id="quizzButton">Fazer Quizz</button>
+
+        <div class="header">
+            <h3 id="learnTitle">Sobre o que deseja aprender?</h3>
+        </div>
+
+        <div id="chaptersList">
+
+        </div>
+
+        <div id="chapterShow">
+
+        </div>
+    </div>
+
+    <script src="../js/libs/bootstrap.bundle.min.js"></script>
+
+    <script src="../modules/database.js"></script>
+
+    <script src="../js/translations/pt/translate.js"></script>
+    <script src="../js/learn/learn.js"></script>
+</body>
+
+</html>

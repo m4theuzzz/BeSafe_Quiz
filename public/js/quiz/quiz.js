@@ -235,7 +235,15 @@ const renderQuestions = (questions, i = 0) => {
 }
 
 const init = (subject = null, challenge = null) => {
+    let requestedSubject = window.localStorage.getItem('requestedQuizz');
+
+    if (requestedSubject && requestedSubject.length > 0) {
+        subject = requestedSubject;
+        window.localStorage.removeItem('requestedQuizz');
+    }
+
     subject = subject == "all" ? null : subject;
+
     const questions = fetchQuestions(subject, challenge);
     renderQuestions(questions);
 };

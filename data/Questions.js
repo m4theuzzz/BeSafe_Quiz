@@ -2,7 +2,7 @@
 {
     id: 0,
     type: "single",
-    subject: "phishing",
+    subject: "",
     challenge: 0,
     priority: 1,
     question: "Pergunta",

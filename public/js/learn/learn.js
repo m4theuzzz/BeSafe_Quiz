@@ -79,6 +79,18 @@ const renderChapters = (subject) => {
         }
 
         chapterInnerHTML += `
+            </div>
+            <div class="references">
+                Referência(s):
+        `;
+
+        for (const reference of chapter.src) {
+            chapterInnerHTML += `
+                <a class="externalLink" href="${reference}">${reference}</a><br/>
+            `;
+        }
+
+        chapterInnerHTML += `
                 </div>
             </div>
         `;

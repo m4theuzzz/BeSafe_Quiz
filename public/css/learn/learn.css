@@ -85,6 +85,15 @@
     padding: 1%;
     margin: 1%;
     border-radius: 2vh;
+    width: 90vw;
+}
+
+.externalLink {
+    max-width: 90%;
+    height: auto;
+    border: 0;
+    background-image: none;
+    background-color: transparent;
 }
 
 @media screen and (max-width: 799px) {
